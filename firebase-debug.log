@@ -1,0 +1,21 @@
+[debug] [2025-06-10T10:24:53.806Z] ----------------------------------------------------------------------
+[debug] [2025-06-10T10:24:53.811Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Smith\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-06-10T10:24:53.812Z] CLI Version:   14.6.0
+[debug] [2025-06-10T10:24:53.812Z] Platform:      win32
+[debug] [2025-06-10T10:24:53.812Z] Node Version:  v22.13.1
+[debug] [2025-06-10T10:24:53.813Z] Time:          Tue Jun 10 2025 15:54:53 GMT+0530 (India Standard Time)
+[debug] [2025-06-10T10:24:53.813Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-10T10:24:53.825Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-10T10:24:53.826Z] > authorizing via signed-in user (mrsmithc49@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Smith\Downloads\react-firebase-task-app-master\react-firebase-task-app-master
+
