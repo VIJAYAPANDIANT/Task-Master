@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { auth, database, ref, onValue, push, query, orderByChild, equalTo } from '../../services/firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './home';
 
 
 const TaskDetail = () => {
@@ -57,22 +56,22 @@ const TaskDetail = () => {
   };
 
   return (
-    <>
-    <Home/>
     <div className="container mt-5">
   
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
+          <div className="card border-0 shadow-sm rounded-4 mb-5" style={{ backgroundColor: 'var(--card-bg)' }}>
+            <div className="card-body p-5">
               {task ? (
                 <div>
-                  <h2 className="text-center mb-4 ">Task Detail</h2>
-                  <h3>{task.title}</h3>
-                  <ul className="list-group mt-3">
-                    <li className="list-group-item "><b>Task ID: </b>{task.id}</li>
-                    <li className="list-group-item"><b>Description: </b> {task.description}</li>
-                    <li className="list-group-item"><b>Due Date: </b> {task.dueDate}</li>
+                  <h2 className="text-center mb-4 fw-bold" style={{ color: 'var(--text-color)' }}>Task Detail</h2>
+                  <h3 style={{ color: 'var(--link-hover)' }}>{task.title}</h3>
+                  <ul className="list-group list-group-flush mt-4 border rounded-3 p-2" style={{ backgroundColor: 'var(--input-bg)' }}>
+                    <li className="list-group-item bg-transparent border-0" style={{ color: 'var(--text-color)' }}><b>Task ID: </b><span className="text-muted">{task.id}</span></li>
+                    <li className="list-group-item bg-transparent border-0" style={{ color: 'var(--text-color)' }}><b>Description: </b> {task.description}</li>
+                    <li className="list-group-item bg-transparent border-0" style={{ color: 'var(--text-color)' }}><b>Due Date: </b> {task.dueDate ? new Date(task.dueDate).toLocaleString() : 'No Due Date'}</li>
+                    {task.createdAt && <li className="list-group-item bg-transparent border-0" style={{ color: 'var(--text-color)' }}><b>History (Created): </b> {new Date(task.createdAt).toLocaleString()}</li>}
+                    {task.updatedAt && <li className="list-group-item bg-transparent border-0" style={{ color: 'var(--text-color)' }}><b>History (Updated): </b> {new Date(task.updatedAt).toLocaleString()}</li>}
                   </ul>
                   <div className="mt-4">
                     <h4>Comments</h4>
@@ -107,7 +106,6 @@ const TaskDetail = () => {
         </div>
       </div>
     </div>
-    </>
   );
 };
 

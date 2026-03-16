@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-gradient: transparent;
+  --text-color: #333;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --input-bg: #fff;
+  --input-border: #e2e8f0;
+  --input-text: #333;
+  --link-color: #2c3e50;
+  --link-hover: #1a252f;
+  --search-bg: #f8f9fa;
+  --muted-text: #6c757d;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[data-theme='dark'] {
+  --bg-gradient: transparent;
+  --text-color: #f1f1f1;
+  --card-bg: rgba(30, 30, 30, 0.75);
+  --navbar-bg: rgba(20, 20, 20, 0.8);
+  --input-bg: #2c2c2c;
+  --input-border: #444;
+  --input-text: #f1f1f1;
+  --link-color: #e0e0e0;
+  --link-hover: #ffffff;
+  --search-bg: #333;
+  --muted-text: #adb5bd;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+/* Base Link Styles */
+a {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover {
+  text-decoration: underline;
+}
+
+/* Card Enhancements */
+.card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: none !important;
+  border-radius: 1rem !important;
+  background: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Enhancements */
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5a6ed8 0%, #6a4092 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+/* Form Inputs */
+.form-control, .form-select {
+  border-radius: 0.5rem;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+.text-muted {
+  color: var(--muted-text) !important;
+}
+
+/* Navbar Enhancements */
+.navbar {
+  background: var(--navbar-bg) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+.navbar-brand {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.nav-link {
+  color: var(--link-color) !important;
+}
+
+.nav-link:hover {
+  color: var(--link-hover) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }

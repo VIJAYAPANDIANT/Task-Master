@@ -5,9 +5,9 @@ import { auth } from '../../services/firebase';
 import Welcome from './Welcome';
 import { Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 
-const Home = () => {
+const Home = ({ theme, toggleTheme }) => {
   const [searchedTaskId, setSearchedTaskId] = useState('');
-
+  
   const handleLogout = async () => {
     try {
       await auth.signOut();
@@ -18,61 +18,80 @@ const Home = () => {
   };
 
   const handleSearchTask = () => {
-    // Redirect to the searched task immediately
     window.location.href = `/task/${searchedTaskId}`;
   };
 
   return (
-    <div className='' style={{ paddingLeft: '15px', paddingRight: '15px' }}>
-      {/* Bootstrap Navbar using react-bootstrap components */}
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/home" style={{ fontSize: '24px', fontWeight: 'bold' }}>
-          Task Manager 
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarNav" />
-        <Navbar.Collapse className="justify-content-end" id="navbarNav">
-          <Nav>
-            <Link className="nav-link" to="/create-task" style={{ fontSize: '18px', fontWeight: 'bold' }}>
-              Create Task
-            </Link>
-            <Link className="nav-link" to="/tasks" style={{ fontSize: '18px', fontWeight: 'bold' }}>
-              Show Tasks
-            </Link>
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search Task ID"
-                className="mr-sm-2"
-                value={searchedTaskId}
-                onChange={(e) => setSearchedTaskId(e.target.value)}
-              />
-              <Button
-                variant="outline-primary"
-                onClick={handleSearchTask}
-                style={{ fontSize: '18px', fontWeight: 'bold', marginLeft: '10px' }}
+    <>
+      <Navbar expand="lg" className="navbar py-3 px-4 position-sticky top-0 z-3">
+        <div className="container-fluid">
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center gap-2">
+            <span style={{ fontSize: '28px' }}>✨</span>
+            <span className="navbar-brand mb-0 h1">Task Master</span>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0 shadow-none" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mx-auto gap-3">
+              <Link className="nav-link fw-semibold" to="/tasks">
+                <i className="bi bi-list-task me-1"></i> Dashboard
+              </Link>
+              <Link className="nav-link fw-semibold" to="/create-task">
+                <i className="bi bi-plus-circle me-1"></i> New Task
+              </Link>
+              <Link className="nav-link fw-semibold" to="/history">
+                <i className="bi bi-clock-history me-1"></i> History
+              </Link>
+            </Nav>
+            <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+              <Form className="d-flex position-relative">
+                <FormControl
+                  type="search"
+                  placeholder="Find ID..."
+                  className="form-control rounded-pill pe-5"
+                  aria-label="Search"
+                  value={searchedTaskId}
+                  onChange={(e) => setSearchedTaskId(e.target.value)}
+                  style={{ width: '200px', backgroundColor: 'var(--search-bg)' }}
+                />
+                <Button 
+                   variant="link" 
+                   onClick={handleSearchTask}
+                   className="position-absolute end-0 top-50 translate-middle-y text-muted text-decoration-none shadow-none"
+                >
+                  🔍
+                </Button>
+              </Form>
+              
+              <Button 
+                variant="outline-secondary" 
+                className="rounded-circle rounded-pill p-2 shadow-sm d-flex align-items-center justify-content-center"
+                style={{ width: '40px', height: '40px', border: '1px solid var(--input-border)' }}
+                onClick={toggleTheme}
+                title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
               >
-                Search
+                {theme === 'light' ? '🌙' : '☀️'}
               </Button>
-            </Form>
-            <Link to="/login">
+
               <Button
                 variant="outline-danger"
+                className="rounded-pill px-4 fw-semibold shadow-sm"
                 onClick={handleLogout}
-                style={{ fontSize: '18px', fontWeight: 'bold', marginLeft: '10px' }}
               >
-                Logout
+                Sign Out
               </Button>
-            </Link>
-          </Nav>
-        </Navbar.Collapse>
+            </div>
+          </Navbar.Collapse>
+        </div>
       </Navbar>
 
-      {/* Content based on selected button */}
-      <div className="container mt-3 d-flex flex-column align-items-center justify-content-center">
+      {/* Main Content Area */}
+      <main className="container-fluid py-4" style={{ minHeight: 'calc(100vh - 80px)' }}>
         <Welcome />
-        <Outlet />
-      </div>
-    </div>
+        <div className="mt-4">
+           <Outlet />
+        </div>
+      </main>
+    </>
   );
 };
 

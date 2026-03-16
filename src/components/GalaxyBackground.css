@@ -1,0 +1,82 @@
+/* Pure CSS Galaxy Background - No external images needed */
+.galaxy-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+[data-theme='light'] .galaxy-container {
+  background: radial-gradient(ellipse at bottom, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.star-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+}
+
+/* Layer 1 - Small Stars */
+#stars-small {
+  width: 1px;
+  height: 1px;
+  box-shadow: 443px 1894px #fff, 1374px 1014px #fff, 1157px 1198px #fff, 1690px 1083px #fff, 1928px 1234px #fff, 145px 678px #fff, 890px 123px #fff, 567px 1456px #fff, 1234px 567px #fff, 1890px 345px #fff, 345px 1789px #fff, 789px 456px #fff, 1567px 890px #fff, 234px 1234px #fff, 901px 1678px #fff, 1456px 234px #fff, 678px 1901px #fff, 1123px 789px #fff;
+  animation: animStar 50s linear infinite;
+}
+
+[data-theme='light'] #stars-small {
+  box-shadow: 443px 1894px #333, 1374px 1014px #333, 1157px 1198px #333, 1690px 1083px #333, 1928px 1234px #333, 145px 678px #333, 890px 123px #333, 567px 1456px #333, 1234px 567px #333, 1890px 345px #333, 345px 1789px #333, 789px 456px #333, 1567px 890px #333, 234px 1234px #333, 901px 1678px #333, 1456px 234px #333, 678px 1901px #333, 1123px 789px #333;
+}
+
+/* Layer 2 - Medium Stars */
+#stars-medium {
+  width: 2px;
+  height: 2px;
+  box-shadow: 123px 456px #fff, 789px 123px #fff, 567px 890px #fff, 1456px 678px #fff, 1234px 1901px #fff, 234px 789px #fff, 901px 345px #fff, 1678px 1456px #fff, 456px 1234px #fff, 1890px 789px #fff, 678px 1567px #fff, 1123px 456px #fff;
+  animation: animStar 100s linear infinite;
+}
+
+[data-theme='light'] #stars-medium {
+  box-shadow: 123px 456px #333, 789px 123px #333, 567px 890px #333, 1456px 678px #333, 1234px 1901px #333, 234px 789px #333, 901px 345px #333, 1678px 1456px #333, 456px 1234px #333, 1890px 789px #333, 678px 1567px #333, 1123px 456px #333;
+}
+
+/* Layer 3 - Big Stars / Planets */
+#stars-big {
+  width: 3px;
+  height: 3px;
+  box-shadow: 890px 123px #fff, 1234px 1567px #fff, 234px 1901px #fff, 1678px 345px #fff, 567px 1123px #fff;
+  animation: animStar 150s linear infinite;
+}
+
+[data-theme='light'] #stars-big {
+  box-shadow: 890px 123px #333, 1234px 1567px #333, 234px 1901px #333, 1678px 345px #333, 567px 1123px #333;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+.galaxy-container:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+
