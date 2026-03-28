@@ -1,4 +1,3 @@
-/* Pure CSS Galaxy Background - No external images needed */
 .galaxy-container {
   position: fixed;
   top: 0;
@@ -6,7 +5,7 @@
   width: 100%;
   height: 100%;
   z-index: -1; 
-  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  background: radial-gradient(ellipse at bottom, #2b1055 0%, #090a0f 100%);
   overflow: hidden;
   transition: opacity 0.5s ease;
 }

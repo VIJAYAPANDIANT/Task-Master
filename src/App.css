@@ -17,16 +17,16 @@
 
 [data-theme='dark'] {
   --bg-gradient: transparent;
-  --text-color: #f1f1f1;
-  --card-bg: rgba(30, 30, 30, 0.75);
-  --navbar-bg: rgba(20, 20, 20, 0.8);
-  --input-bg: #2c2c2c;
-  --input-border: #444;
-  --input-text: #f1f1f1;
-  --link-color: #e0e0e0;
-  --link-hover: #ffffff;
-  --search-bg: #333;
-  --muted-text: #adb5bd;
+  --text-color: #f8f9fa;
+  --card-bg: rgba(20, 15, 35, 0.65);
+  --navbar-bg: rgba(15, 10, 25, 0.8);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-text: #f8f9fa;
+  --link-color: #c9a0ff;
+  --link-hover: #e0caff;
+  --search-bg: rgba(255, 255, 255, 0.03);
+  --muted-text: #a89bc0;
 }
 
 body {
@@ -78,34 +78,49 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #b026ff 0%, #ff137d 100%);
   border: none;
+  box-shadow: 0 4px 15px rgba(255, 19, 125, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #5a6ed8 0%, #6a4092 100%);
+  background: linear-gradient(135deg, #9a1ce0 0%, #e61070 100%);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 19, 125, 0.5);
 }
 
-/* Form Inputs */
-.form-control, .form-select {
+body .form-control, body .form-select {
   border-radius: 0.5rem;
   border: 1px solid var(--input-border);
-  background-color: var(--input-bg);
-  color: var(--input-text);
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
   padding: 0.75rem 1rem;
   transition: all 0.3s ease;
 }
 
-.form-control:focus, .form-select:focus {
-  background-color: var(--input-bg);
-  color: var(--input-text);
-  border-color: #667eea;
-  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+body .form-control:focus, body .form-select:focus {
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border-color: #ff137d;
+  box-shadow: 0 0 0 0.25rem rgba(255, 19, 125, 0.25);
 }
 
-.text-muted {
+body .form-control::placeholder, body .form-select::placeholder {
+  color: var(--muted-text);
+  opacity: 0.7;
+}
+
+option {
+  background-color: #fff;
+  color: #333;
+}
+
+[data-theme='dark'] option {
+  background-color: #1a1025;
+  color: #f8f9fa;
+}
+
+body .text-muted {
   color: var(--muted-text) !important;
 }
 

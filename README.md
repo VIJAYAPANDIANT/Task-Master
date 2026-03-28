@@ -7,9 +7,10 @@ Task Master is a premium, full-stack task management application designed with a
 ## 🌌 Key Highlights
 
 ### 🎨 Stunning Aesthetics
+- **Vibrant Neon Theme**: A premium Dark Mode featuring deep purple nebula gradients and highly legible neon pink/purple UI accents.
 - **Animated Galaxy Background**: A moving starfield with three-layer parallax effects (stars, planets, and cosmic dust) that follows you through every page.
-- **Glassmorphism UI**: Semi-transparent, blurred cards and navigation elements that create a sense of depth and modern elegance.
-- **Seamless Theming**: Choose between a deep, immersive **Dark Mode** and a crisp, high-tech **Light Mode** with a single click.
+- **Glassmorphism UI**: Semi-transparent, blurred cards, fully customized form inputs (including dropdowns and date pickers), and navigation elements that create a sense of depth and modern elegance.
+- **Seamless Theming**: Choose between our new **Neon Dark Mode** and a crisp, high-tech **Light Mode** with a single click.
 
 ### 🛡️ Secure & Structured
 - **Firebase Authentication**: Integrated secure login and registration flow with persistent sessions.

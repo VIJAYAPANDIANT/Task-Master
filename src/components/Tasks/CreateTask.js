@@ -54,7 +54,6 @@ const CreateTask = () => {
                   <input
                     type="text"
                     className="form-control form-control-lg border-0 shadow-sm"
-                    style={{ backgroundColor: 'var(--input-bg)', color: 'var(--input-text)' }}
                     placeholder="What needs to be done?"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
@@ -64,7 +63,6 @@ const CreateTask = () => {
                   <label className="form-label fw-semibold text-muted mb-2">Description</label>
                   <textarea
                     className="form-control form-control-lg border-0 shadow-sm"
-                    style={{ backgroundColor: 'var(--input-bg)', color: 'var(--input-text)' }}
                     placeholder="Add more details about this task"
                     rows="3"
                     value={description}
@@ -87,7 +85,6 @@ const CreateTask = () => {
                   <button
                     type="button"
                     className="btn btn-primary btn-lg rounded-pill fw-bold shadow-sm py-3"
-                    style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: 'none' }}
                     onClick={handleCreateTask}
                   >
                     🚀 Create Task
