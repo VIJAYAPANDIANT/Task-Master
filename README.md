@@ -1,25 +1,38 @@
-# ✨ Task Master: The Cosmic Productivity Suite
+# 🌌 Task Master: The Cosmic Productivity Suite
 
-Task Master is a premium, full-stack task management application designed with a futuristic aesthetic and powerful productivity features. Built on the modern React framework and powered by Firebase, it offers a seamless, real-time experience across all devices.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel&logoColor=white)](https://task-master-chi-three.vercel.app/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+**Task Master** is a premium, full-stack task management application designed with a futuristic "Cosmic" aesthetic. Built on the modern React framework, it offers a seamless, real-time experience with a stunning glassmorphism UI and a dynamic galaxy background.
+
+🚀 **[View Live Demo](https://task-master-chi-three.vercel.app/)**
 
 ---
 
-## 🌌 Key Highlights
+## 📸 Project Preview
 
-### 🎨 Stunning Aesthetics
-- **Vibrant Neon Theme**: A premium Dark Mode featuring deep purple nebula gradients and highly legible neon pink/purple UI accents.
-- **Animated Galaxy Background**: A moving starfield with three-layer parallax effects (stars, planets, and cosmic dust) that follows you through every page.
-- **Glassmorphism UI**: Semi-transparent, blurred cards, fully customized form inputs (including dropdowns and date pickers), and navigation elements that create a sense of depth and modern elegance.
-- **Seamless Theming**: Choose between our new **Neon Dark Mode** and a crisp, high-tech **Light Mode** with a single click.
+![Task Master Preview](file:///C:/Users/VIJAYA%20PANDIAN.T/.gemini/antigravity/brain/9992719b-1b33-41c5-a7a1-107e1a439546/task_master_preview_1777047279793.png)
 
-### 🛡️ Secure & Structured
-- **Firebase Authentication**: Integrated secure login and registration flow with persistent sessions.
-- **Nested Routing**: A robust architecture that keeps your workspace organized with a persistent navbar and dynamic dashboard components.
+---
 
-### 📈 Task Intelligence
-- **Real-Time Database**: Your tasks are synced instantly across devices using Firebase Realtime Database.
-- **Activity History**: Every action is tracked. View precisely when tasks were created or updated in a beautiful timeline view.
-- **Smart Filtering**: Quickly sort your workload by "Completed," "Incomplete," or view everything at once.
+## ✨ Key Features
+
+- **🎨 Stunning Aesthetics**: 
+  - **Vibrant Neon Theme**: A premium Dark Mode featuring deep purple nebula gradients and neon accents.
+  - **Animated Galaxy Background**: A moving starfield with three-layer parallax effects that follows you throughout the app.
+  - **Glassmorphism UI**: Semi-transparent, blurred cards and modern form elements.
+- **🛡️ Secure Authentication**: Integrated login, registration, and password reset flows with persistent session management.
+- **📈 Task Intelligence**:
+  - **Real-Time Updates**: Instant task syncing (currently using a robust LocalStorage-based mock for easy portability).
+  - **Activity History**: View a beautiful timeline of when tasks were created or updated.
+  - **Smart Filtering**: Quickly sort tasks by completion status.
+- **🔍 Magic Search**: Instantly find specific tasks using the integrated search system in the navigation bar.
+- **🌗 Theme Toggle**: Switch between **Cosmic Dark** and **High-Tech Light** modes with a single click.
 
 ---
 
@@ -27,26 +40,46 @@ Task Master is a premium, full-stack task management application designed with a
 
 | Layer | Technology |
 | :--- | :--- |
-| **Frontend** | React.js, React Router v6 |
-| **Styling** | Vanilla CSS (Variables), Bootstrap 5 |
-| **Backend** | Firebase Realtime Database |
-| **Auth** | Firebase Authentication |
-| **Design** | Glassmorphism, CSS Animations |
+| **Frontend** | React.js (v18), React Router v6 |
+| **Styling** | Vanilla CSS (Variables), Bootstrap 5, Glassmorphism |
+| **State Management** | React Hooks (useState, useEffect) |
+| **Data Persistence** | Firebase Realtime Database (Mocked via LocalStorage) |
+| **Components** | React-Bootstrap, React Datepicker, React Toastify |
+
+---
+
+## 📂 Project Structure
+
+```text
+Task/
+├── public/                 # Static assets
+├── src/
+│   ├── components/
+│   │   ├── Auth/           # Login, Register, PasswordReset
+│   │   ├── Tasks/          # TaskList, CreateTask, TaskDetail, TaskHistory
+│   │   └── GalaxyBackground # Cosmic background components
+│   ├── services/
+│   │   └── firebase.js     # Mock Firebase service implementation
+│   ├── App.js              # Main application logic & routing
+│   ├── index.js            # Entry point
+│   └── App.css             # Global cosmic styles
+└── README.md
+```
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- npm (Node Package Manager)
+- **Node.js** (v14 or higher)
+- **npm** (Node Package Manager)
 
 ### Installation
 
 1. **Clone the Repository**
    ```bash
    git clone [repository-url]
-   cd Zero2site-Task1/Task
+   cd Task
    ```
 
 2. **Install Dependencies**
@@ -54,10 +87,7 @@ Task Master is a premium, full-stack task management application designed with a
    npm install
    ```
 
-3. **Configure Firebase**
-   Update the configuration in `src/services/firebase.js` with your own Firebase project credentials.
-
-4. **Run the App**
+3. **Run the Application**
    ```bash
    npm start
    ```
@@ -65,15 +95,25 @@ Task Master is a premium, full-stack task management application designed with a
 
 ---
 
-## 📖 How to Use
+## 📝 Usage Guide
 
-1. **Register/Login**: Create an account to start tracking your tasks privately.
-2. **Dashboard**: Manage your current tasks. You can edit titles, descriptions, and toggle completion.
-3. **Magic Search**: Use the search bar in the navbar to quickly find a specific task by its ID.
-4. **Theme Toggle**: Use the ☀️/🌙 icon in the top-right to switch between space-themed modes.
-5. **Activity Log**: Head to the "History" tab to see a complete timeline of your productivity achievements.
+1. **Onboard**: Register a new account or log in with existing credentials (data is persisted locally in your browser).
+2. **Organize**: Use the **Create Task** button to add new items with titles, descriptions, and due dates.
+3. **Track**: Monitor your progress in the **Dashboard**. Click on tasks to see detailed info.
+4. **History**: Visit the **History** tab to see your productivity timeline.
+5. **Theme**: Click the ☀️/🌙 icon in the navbar to change the atmosphere.
 
 ---
 
 ## 🤝 Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests to enhance the Task Master experience.
+
+Contributions are welcome! Please feel free to submit a Pull Request or open an Issue for any features or bug fixes.
+
+---
+
+## 📜 License
+
+Distributed under the MIT License.
+
+---
+*Created with ❤️ for premium productivity.*
