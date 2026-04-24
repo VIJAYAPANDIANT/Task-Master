@@ -14,12 +14,6 @@
 
 ---
 
-## 📸 Project Preview
-
-![Task Master Preview](file:///C:/Users/VIJAYA%20PANDIAN.T/.gemini/antigravity/brain/9992719b-1b33-41c5-a7a1-107e1a439546/task_master_preview_1777047279793.png)
-
----
-
 ## ✨ Key Features
 
 - **🎨 Stunning Aesthetics**: 
